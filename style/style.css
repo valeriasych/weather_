@@ -64,3 +64,26 @@
     font-family: 'Comfortaa';
 }
 
+#input {
+    position: relative;
+    width: 250px;
+    height: 40px;
+    padding-left: 20px;
+    margin-left: 20px;
+    top: 25px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 15px;
+}
+
+#button {
+    position: relative;
+    float: right;
+    top: 25px;
+    right: 20px;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 40px;
+    width: 100px;
+    text-align: center;
+}
