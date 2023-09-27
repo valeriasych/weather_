@@ -5,11 +5,20 @@ inputHum = document.getElementById("hum"),
 inputWind = document.getElementById("wind"),
 img = document.createElement('img'),
 container = document.getElementById("picture"),
+btn = document.querySelector("#button"),
+inputTextField = document.querySelector("#input"),
 apikey = "a49c74e3b2b7475d9b965135232509";
 
 let api;
 let apiday;
 let place="Осло";
+
+function btnclick(){
+    place = (inputTextField.value);
+    requestApi(place);
+}
+
+btn.addEventListener('click',btnclick);
 
 requestApi(place);
 
