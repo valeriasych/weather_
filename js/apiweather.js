@@ -6,37 +6,50 @@ inputWind = document.getElementById("wind"),
 apikey = "a49c74e3b2b7475d9b965135232509";
 
 let api;
+let apiday;
 let place="Норильск";
 
 requestApi(place);
 
 function requestApi(){
     api = `http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${place}&lang=ru&&aqi=no`; 
+    apiday = `http://api.weatherapi.com/v1/forecast.json?key=${apikey}&q=${place}&lang=ru&&aqi=no`; 
 	fetchData();
+    fetchDay();
 }
 
 function fetchData(){
     fetch(api).then(res => res.json()).then(result => weatherDetails(result)).catch(() =>{
-        inputCity.innerText = "Что-то пошло не так";
-        inputTemp.innerText = "...";
-        inputPrep.innerText = "";
-        inputHum.innerText = "";
-        inputWind.innerText = "";
-        inputWind.innerText = "";
+      errorfetch;
    });
+}
+
+function fetchDay(){
+    fetch(apiday).then(res => res.json()).then(result => weatherDetails(result)).catch(() => {
+        errorfetch;
+    })
+}
+
+function errorfetch(){
+    inputCity.innerText = "Что-то пошло не так";
+    inputTemp.innerText = "...";
+    inputPrep.innerText = "";
+    inputHum.innerText = "";
+    inputWind.innerText = "";
 }
 
 function weatherDetails(info){
 	
     city = info.location["name"];
     temp = info.current["temp_c"];
-   // prep = info.day["daily_chance_of_rain"];
+    forcst = info.forecast.forecastday[0];
+    prep = forcst.day["daily_chance_of_rain"];
     hum = info.current["humidity"];
     wind =  info.current["wind_kph"];
    
     inputCity.innerText = place;
     inputTemp.innerText = Math.floor(temp);
-    //inputPrep.innerText = "Вероятность осадков: " + prep  + "%"; 
+    inputPrep.innerText = "Вероятность осадков: " + prep  + "%"; 
     inputHum.innerText = "Влажность: " + hum + "%";
     inputWind.innerText = "Ветер: " + wind + " м/с";
 
