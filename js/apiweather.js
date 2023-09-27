@@ -16,6 +16,7 @@ let place="Норильск";
 function btnclick(){
     place = upper(inputTextField.value);
     requestApi(place);
+    inputTextField.value="";
 }
 
 function upper(str){
