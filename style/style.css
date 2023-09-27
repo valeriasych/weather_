@@ -14,3 +14,11 @@
     left: 140px;
     padding-top: 20px;
 }
+
+#temperature {
+    position: relative;
+    left: 95px;
+    font-size: 45px;
+    direction: rtl;
+    width: 20%;
+}
