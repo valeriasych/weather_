@@ -1,0 +1,7 @@
+.weather {
+    position: relative;
+    height: 160px;
+    width: 240px;
+    background: #fff;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
