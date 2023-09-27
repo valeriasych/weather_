@@ -7,7 +7,7 @@ apikey = "a49c74e3b2b7475d9b965135232509";
 
 let api;
 let apiday;
-let place="Норильск";
+let place="Анталия";
 
 requestApi(place);
 
