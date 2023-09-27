@@ -1,7 +1,16 @@
-.weather {
+@import "https://fonts.fontstorage.com/import/comfortaa.css";
+
+#weather {
     position: relative;
     height: 160px;
     width: 240px;
     background: #fff;
     box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.5);
+    font-family: 'Comfortaa';
+}
+
+#celsius {
+    position: relative;
+    left: 140px;
+    padding-top: 20px;
 }
