@@ -3,11 +3,13 @@ inputTemp = document.getElementById("temperature"),
 inputPrep = document.getElementById("prep"),
 inputHum = document.getElementById("hum"),
 inputWind = document.getElementById("wind"),
+img = document.createElement('img'),
+container = document.getElementById("picture"),
 apikey = "a49c74e3b2b7475d9b965135232509";
 
 let api;
 let apiday;
-let place="Анталия";
+let place="Осло";
 
 requestApi(place);
 
@@ -50,12 +52,15 @@ function weatherDetails(info){
     prep = forcst.day["daily_chance_of_rain"];
     hum = info.current["humidity"];
     wind =  info.current["wind_kph"];
+    icn = info.forecast.forecastday[0];
+    img.src = "https:" + icn.day.condition.icon;
    
     inputCity.innerText = place;
     inputTemp.innerText = Math.floor(temp);
     inputPrep.innerText = "Вероятность осадков: " + prep  + "%"; 
     inputHum.innerText = "Влажность: " + hum + "%";
     inputWind.innerText = "Ветер: " + wind + " м/с";
+    container.append(img);
 
 }
 
