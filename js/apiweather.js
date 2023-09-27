@@ -39,8 +39,14 @@ function requestApi(){
 }
 
 function fetchData(){
-    fetch(api).then(res => res.json()).then(result => weatherDetails(result)).catch(() =>{
-      errorfetch;
+    fetch(api).then(res => {
+            if (res.status === 400) {
+                alert ("Город " + place + " не найден!");
+            }
+            return res.json();
+        })
+            .then(result => weatherDetails(result)).catch(() =>{     
+        errorfetch;
    });
 }
 
@@ -75,6 +81,5 @@ function weatherDetails(info){
     inputHum.innerText = "Влажность: " + hum + "%";
     inputWind.innerText = "Ветер: " + wind + " м/с";
     container.append(img);
-
 }
 
