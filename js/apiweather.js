@@ -11,6 +11,10 @@ let place="Анталия";
 
 requestApi(place);
 
+setTimeout(function(){
+	location.reload();
+}, 3600000);
+
 function requestApi(){
     api = `http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${place}&lang=ru&&aqi=no`; 
     apiday = `http://api.weatherapi.com/v1/forecast.json?key=${apikey}&q=${place}&lang=ru&&aqi=no`; 
