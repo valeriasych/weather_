@@ -11,11 +11,15 @@ apikey = "a49c74e3b2b7475d9b965135232509";
 
 let api;
 let apiday;
-let place="Осло";
+let place="Норильск";
 
 function btnclick(){
-    place = (inputTextField.value);
+    place = upper(inputTextField.value);
     requestApi(place);
+}
+
+function upper(str){
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 btn.addEventListener('click',btnclick);
