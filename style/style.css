@@ -22,3 +22,10 @@
     direction: rtl;
     width: 20%;
 }
+
+#picture{
+    position: absolute;
+    width: 30%;
+    left: 160px;
+    bottom: 60px;
+}
