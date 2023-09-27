@@ -11,8 +11,6 @@ let api;
 let apiday;
 let place="Осло";
 
-alert('test new branch');
-
 requestApi(place);
 
 setTimeout(function(){
