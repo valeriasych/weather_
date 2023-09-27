@@ -29,3 +29,27 @@
     left: 160px;
     bottom: 60px;
 }
+
+#city {
+    position: relative;
+    font-size: 17px;   
+    bottom: 75px;
+	margin-left: 20px; 
+}
+
+
+.otherinfo {
+	position: absolute;
+	font-size: 12px;
+	margin-left: 20px;
+}
+
+#prep {
+	top: 100px;
+}
+#hum {
+	top: 115px;
+}
+#wind {
+	top: 130px;
+}
